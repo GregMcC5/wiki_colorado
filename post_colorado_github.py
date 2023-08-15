@@ -36,7 +36,7 @@ def get_info_string(record):
 with open("extracted_metadata.json", 'r') as file:
     data = json.load(file)
 
-approved_records = [x for x in data if TERM.lower() not in " ".join([str(y) for y in x.values()]).lower()]
+approved_records = [x for x in data if "squaw".lower() not in " ".join([str(y) for y in x.values()]).lower()]
 
 posted_ids = []
 selected_record = random.choice(approved_records)
