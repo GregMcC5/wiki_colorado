@@ -8,6 +8,8 @@ USERNAME = os.getenv("USERNAME")
 PASS = os.getenv("PASS")
 TERM = os.getenv("TERM")
 
+print(USERNAME)
+
 def convert_coordinates(coordinates, NW):
     degrees, minutes, seconds = map(int, coordinates.split())
     return f"{degrees}° {minutes}' {seconds:.2f}\" {NW}"
@@ -59,7 +61,7 @@ if page_id not in posted_ids:
             img = file.read()
         client = Client()
         client.login(USERNAME, PASS)
-        client.send_image(identifier=page_id, pagetext=get_info_string(selected_record), image=img, image_alt=f'Aerial shot looking down on {selected_record["county"]} county, {selected_record["state"]}')
+        client.send_image(pagetext=get_info_string(selected_record), image=img, image_alt=f'Aerial shot looking down on {selected_record["county"]} county, {selected_record["state"]}')
 
         print(get_info_string(selected_record))
     else:
