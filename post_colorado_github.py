@@ -4,11 +4,12 @@ import random
 from atproto import Client
 import os
 
-# USERNAME = os.environ["USERNAME"]
-# PASS = os.environ["PASS"]
+USERNAME = os.environ["USERNAME"]
+PASS = os.environ["PASS"]
 print("here's the environ", os.environ)
 
 print(USERNAME)
+print(PASS)
 
 def convert_coordinates(coordinates, NW):
     degrees, minutes, seconds = map(int, coordinates.split())
