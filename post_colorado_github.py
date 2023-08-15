@@ -4,8 +4,11 @@ import random
 from atproto import Client
 import os
 
-USERNAME = os.environ["USERNAME"]
-PASS = os.environ["PASS"]
+# USERNAME = os.environ["USERNAME"]
+# PASS = os.environ["PASS"]
+
+USERNAME = {{ secret.USERNAME }}
+PASS = {{ secret.PASS }}
 
 print(USERNAME)
 
