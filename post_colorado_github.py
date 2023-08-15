@@ -59,7 +59,7 @@ if page_id not in posted_ids:
             img = file.read()
         client = Client()
         client.login(USERNAME, PASS)
-        client.send_image(text=get_info_string(selected_record), image=img, image_alt=f'Aerial shot looking down on {selected_record["county"]} county, {selected_record["state"]}')
+        client.send_image(identifier=page_id, pagetext=get_info_string(selected_record), image=img, image_alt=f'Aerial shot looking down on {selected_record["county"]} county, {selected_record["state"]}')
 
         print(get_info_string(selected_record))
     else:
