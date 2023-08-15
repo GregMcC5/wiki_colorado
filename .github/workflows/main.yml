@@ -2,7 +2,7 @@ name: Tweet at 22 Minutes Past the Hour
 
 on:
   schedule:
-    - cron: '30 * * * *'  # Runs at 22 minutes past every hour
+    - cron: '47 * * * *'  # Runs at 22 minutes past every hour
 
 jobs:
   tweet:
@@ -23,4 +23,7 @@ jobs:
           pip install requests
 
       - name: Run Python script
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          PASS: ${{ secrets.PASS }}
         run: python3 post_colorado_github.py
