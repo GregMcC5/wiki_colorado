@@ -6,7 +6,7 @@ import os
 
 # USERNAME = os.environ["USERNAME"]
 # PASS = os.environ["PASS"]
-
+print("here's the environ", os.environ)
 USERNAME = {{ secret.USERNAME }}
 PASS = {{ secret.PASS }}
 
