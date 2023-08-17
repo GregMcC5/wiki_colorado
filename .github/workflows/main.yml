@@ -24,6 +24,6 @@ jobs:
 
       - name: Run Python script
         env:
-          USERNAME: ${{ vars.USERNAME_VAR }}
-          PASS: ${{ vars.PASS_VAR }}
+          USERNAME: ${{ env.USERNAME_VAR }}
+          PASS: ${{ env.PASS_VAR }}
         run: python3 post_colorado_github.py
