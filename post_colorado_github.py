@@ -4,12 +4,16 @@ import random
 from atproto import Client
 import os
 
-USERNAME = os.environ["USERNAME"]
-PASS = os.environ["PASS"]
+USERNAME = os.environ["USERNAME_VAR"]
+PASS = os.environ["PASS_VAR"]
 print("here's the environ again", os.environ)
 
 print(USERNAME)
 print(PASS)
+
+if not USERNAME or if not PASS:
+    print("issue still occurring")
+    raise Error
 
 def convert_coordinates(coordinates, NW):
     degrees, minutes, seconds = map(int, coordinates.split())
