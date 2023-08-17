@@ -1,4 +1,4 @@
-name: Tweet at 22 Minutes Past the Hour
+name: PostColorado
 
 on:
   schedule:
