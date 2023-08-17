@@ -11,10 +11,6 @@ print("here's the environ again", os.environ)
 print(USERNAME)
 print(PASS)
 
-if not USERNAME or if not PASS:
-    print("issue still occurring")
-    raise Error
-
 def convert_coordinates(coordinates, NW):
     degrees, minutes, seconds = map(int, coordinates.split())
     return f"{degrees}° {minutes}' {seconds:.2f}\" {NW}"
