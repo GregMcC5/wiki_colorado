@@ -2,7 +2,7 @@ name: PostColorado
 
 on:
   schedule:
-    - cron: '21 * * * *'  # Runs at 22 minutes past every hour
+    - cron: '43 * * * *'  # Runs at 22 minutes past every hour
 
 jobs:
   tweet:
@@ -23,7 +23,7 @@ jobs:
           pip install requests
 
       - name: Run Python script
+        run: python3 post_colorado_github.py
         env:
           USERNAME: ${{ env.USERNAME_VAR }}
           PASS: ${{ env.PASS_VAR }}
-        run: python3 post_colorado_github.py
