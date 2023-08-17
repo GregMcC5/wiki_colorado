@@ -6,7 +6,7 @@ import os
 
 USERNAME = os.environ["USERNAME"]
 PASS = os.environ["PASS"]
-print("here's the environ", os.environ)
+print("here's the environ again", os.environ)
 
 print(USERNAME)
 print(PASS)
