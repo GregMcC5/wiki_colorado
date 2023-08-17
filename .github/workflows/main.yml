@@ -2,7 +2,7 @@ name: PostColorado
 
 on:
   schedule:
-    - cron: '49 * * 5 *'  # Runs at 22 minutes past every hour
+    - cron: '49 * * * *'  # Runs at 22 minutes past every hour
 
 jobs:
   tweet:
