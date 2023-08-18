@@ -2,7 +2,7 @@ name: PostColorado
 
 on:
   schedule:
-    - cron: '30 * * * *'  # Runs at 22 minutes past every hour
+    - cron: '40 * * * *'  # Runs at 22 minutes past every hour
 
 jobs:
   tweet:
@@ -25,7 +25,10 @@ jobs:
       - name: test keys
         env: 
           USERNAME : ${{ secrets.USERNAME }}
-        run: echo $USERNAME
+          USERNAME2 : ${{ env.USERNAME_VAR }}
+        run: |
+          echo $USERNAME
+          echo $USERNAME2
         
         
       - name: Run Python script
