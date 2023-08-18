@@ -2,7 +2,7 @@ name: PostColorado
 
 on:
   schedule:
-    - cron: '40 * * * *'  # Runs at 22 minutes past every hour
+    - cron: '51 * * * *'  # Runs at 22 minutes past every hour
 
 jobs:
   tweet:
@@ -10,6 +10,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        
+      - name: test keys
+        env: 
+          USERNAME : ${{ secrets.USERNAME }}
+          USERNAME2 : ${{ env.USERNAME_VAR }}
+        run: |
+          echo $USERNAME
+          echo $USERNAME2
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -21,15 +29,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install atproto
           pip install requests
-
-      - name: test keys
-        env: 
-          USERNAME : ${{ secrets.USERNAME }}
-          USERNAME2 : ${{ env.USERNAME_VAR }}
-        run: |
-          echo $USERNAME
-          echo $USERNAME2
-        
         
       - name: Run Python script
         run: python3 post_colorado_github.py
