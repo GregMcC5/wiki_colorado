@@ -2,7 +2,7 @@ name: PostColorado
 
 on:
   schedule:
-    - cron: '17 * * * *'  # Runs at 22 minutes past every hour
+    - cron: '30 * * * *'  # Runs at 22 minutes past every hour
 
 jobs:
   tweet:
@@ -22,5 +22,11 @@ jobs:
           pip install atproto
           pip install requests
 
+      - name: test keys
+        env: 
+          USERNAME : ${{ secrets.USERNAME }}
+        run: echo $USERNAME
+        
+        
       - name: Run Python script
         run: python3 post_colorado_github.py
