@@ -12,12 +12,9 @@ jobs:
         uses: actions/checkout@v2
         
       - name: test keys
-        env: 
-          USERNAME : ${{ secrets.USERNAME }}
-          USERNAME2 : ${{ env.USERNAME_VAR }}
         run: |
-          echo $USERNAME
-          echo $USERNAME2
+          echo ${{ secrets.USERNAME }}
+          echo ${{ env.USERNAME_VAR }}
 
       - name: Set up Python
         uses: actions/setup-python@v2
